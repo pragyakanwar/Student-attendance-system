@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<div class="header">
+    <img src="{{ url_for('static', filename='images/logo.jpg') }}" class="logo">
+    <div class="college-title">
+        <h1>Engineering College Bikaner</h1>
+        <p>Attendance Management Portal</p>
+    </div>
+</div>
+
+<div class="navbar">
+
+<a href="/">Home</a>
+
+<a href="/student_login">Student</a>
+
+<a href="/teacher">Teacher</a>
+
+<a href="/admin">Admin</a>
+
+<a href="/">Logout</a>
+
+</div>
+
+<head>
+
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<img src="{{ url_for('static', filename='images/logo.png') }}" class="logo">
+
+<h2>College Attendance System</h2>
+
+</div>
+
+<div class="navbar">
+Admin Panel
+</div>
+
+<div class="container">
+
+<h2>System Overview</h2>
+
+<div class="dashboard-cards">
+
+<div class="card-box">
+<h3>Total Students</h3>
+<p>{{total_students}}</p>
+</div>
+
+<div class="card-box">
+<h3>Total Teachers</h3>
+<p>{{total_teachers}}</p>
+</div>
+
+<div class="card-box">
+<h3>Total Attendance</h3>
+<p>{{total_attendance}}</p>
+</div>
+
+</div>
+
+<h2>Student List</h2>
+
+<table>
+
+<tr>
+<th>Name</th>
+<th>Branch</th>
+<th>Year</th>
+</tr>
+
+{% for s in students %}
+
+<tr>
+<td>{{s[0]}}</td>
+<td>{{s[1]}}</td>
+<td>{{s[2]}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

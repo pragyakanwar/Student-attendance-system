@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Student Dashboard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<img src="{{ url_for('static', filename='images/logo.jpg') }}" class="logo">
+
+<div class="college-title">
+<h1>Engineering College Bikaner</h1>
+<p>Attendance Management Portal</p>
+</div>
+
+</div>
+
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<a href="/">Home</a>
+<a href="/teacher">Teacher</a>
+<a href="/admin">Admin</a>
+<a href="/">Logout</a>
+<a href="/student_profile">Profile</a>
+
+</div>
+
+
+<!-- MAIN CONTAINER -->
+
+<div class="container">
+
+<h2>Student Dashboard</h2>
+<a href="/face_attendance">
+<button>Mark Attendance with Face</button>
+</a>
+
+<!-- STUDENT INFO CARD -->
+
+<div class="card">
+
+<p><b>Name:</b> {{ name }}</p>
+<p><b>Branch:</b> {{ branch }}</p>
+<p><b>Year:</b> {{ year }}</p>
+
+</div>
+
+
+<!-- ATTENDANCE PERCENTAGE -->
+
+<div class="card">
+
+<h3>Overall Attendance</h3>
+
+<h1>{{ percentage }} %</h1>
+
+<div class="progress">
+
+<div class="progress-bar" style="width: {{percentage}}%"></div>
+
+{% if percentage < 75 %}
+
+<div class="warning">
+
+⚠ WARNING: Your attendance is below 75%. Please attend more classes.
+
+</div>
+
+{% endif %}
+
+</div>
+
+</div>
+
+
+<!-- ATTENDANCE CHART -->
+
+<h3>Attendance Chart</h3>
+
+<div class="chart-container">
+
+<canvas id="attendanceChart"></canvas>
+
+</div>
+
+
+<!-- SUBJECT WISE ATTENDANCE -->
+
+<h3>Subject Wise Attendance</h3>
+
+<table>
+
+<tr>
+<th>Subject</th>
+<th>Present</th>
+<th>Total</th>
+<th>Percentage</th>
+</tr>
+
+{% for sub in subject_data %}
+
+<tr>
+
+<td>{{ sub[0] }}</td>
+
+<td>{{ sub[1] }}</td>
+
+<td>{{ sub[2] }}</td>
+
+<td>
+
+{% set percent = (sub[1] / sub[2] * 100) %}
+
+{% if percent >= 75 %}
+
+<span class="good">{{ percent | round(2) }}%</span>
+
+{% else %}
+
+<span class="bad">{{ percent | round(2) }}%</span>
+
+{% endif %}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+
+<!-- CHART SCRIPT -->
+
+<script>
+
+const present = {{ percentage }};
+const absent = {{ absent }};
+
+const ctx = document.getElementById('attendanceChart');
+
+new Chart(ctx, {
+
+type: 'doughnut',
+
+data: {
+
+labels: ['Present','Absent'],
+
+datasets: [{
+
+data: [present, absent],
+
+backgroundColor: ['#36A2EB','#FF6384']
+
+}]
+
+}
+
+});
+
+</script>
+
+
+</body>
+
+</html>

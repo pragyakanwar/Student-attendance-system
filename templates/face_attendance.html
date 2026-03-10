@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Face Attendance</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+
+</head>
+
+<body>
+
+<div class="header">
+
+<img src="{{ url_for('static', filename='images/logo.jpg') }}" class="logo">
+
+<div class="college-title">
+<h1>Engineering College Bikaner</h1>
+<p>Face Recognition Attendance</p>
+
+</div>
+
+</div>
+
+<div class="container">
+
+<h2>Face Recognition Attendance</h2>
+
+<p>Click the button below to mark attendance using your face.</p>
+
+<a href="/start_face_attendance">
+<button>Start Camera</button>
+</a>
+
+</div>
+
+</body>
+</html>

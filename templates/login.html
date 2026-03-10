@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Attendance Portal</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="banner">
+
+<img src="{{ url_for('static', filename='images/college.jpg') }}" class="banner-img">
+
+<div class="banner-text">
+
+<h1>Engineering College Bikaner</h1>
+
+<p>Attendance Management System</p>
+
+</div>
+
+</div>
+
+<div class="container">
+
+<h2>Login Portal</h2>
+
+<h1>College Attendance Portal</h1>
+
+<img src="{{ url_for('static', filename='images/college.jpg') }}" class="college-img">
+
+<form action="/student_login" method="POST">
+
+<input type="text" name="student_id" placeholder="Enter College ID" required>
+
+<input type="password" name="password" placeholder="Enter Password" required>
+
+<button type="submit">Student Login</button>
+
+</form>
+
+<br>
+
+<h3>Teacher Access</h3>
+
+<a href="/teacher_login_page">
+<button>Teacher Login</button>
+</a>
+
+</div>
+
+</body>
+</html>

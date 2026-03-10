@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Student Profile</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<img src="{{ url_for('static', filename='images/logo.jpg') }}" class="logo">
+
+<div class="college-title">
+<h1>Engineering College Bikaner</h1>
+<p>Attendance Management Portal</p>
+</div>
+
+</div>
+
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<a href="/student_dashboard">Dashboard</a>
+<a href="/student_profile">Profile</a>
+<a href="/">Logout</a>
+
+</div>
+
+
+<!-- PROFILE SECTION -->
+
+<div class="container">
+
+<h2>Student Profile</h2>
+
+<div class="card profile-card">
+
+<img src="{{ url_for('static', filename='images/student.png') }}" class="profile-img">
+
+<p><b>Name:</b> {{ name }}</p>
+
+<p><b>Student ID:</b> {{ student_id }}</p>
+
+<p><b>Branch:</b> {{ branch }}</p>
+
+<p><b>Year:</b> {{ year }}</p>
+
+<p><b>Attendance:</b> {{ percentage }}%</p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
