@@ -1,72 +1,84 @@
-# Student Attendance System
+# Smart Attendance System using Computer Vision
 
-A full-stack web application to manage student attendance using **Flask (Python)** for the backend and **React.js** for the frontend.
+An AI-assisted attendance management system developed using Python, Flask, OpenCV, and SQLite.
+The system automates attendance tracking using computer vision and facial recognition techniques.
+
+---
 
 ## Features
 
-* Student login authentication
-* QR code based attendance
-* Real-time attendance tracking
-* Dashboard to view attendance records
-* Secure backend API using Flask
+* Face detection using OpenCV
+* Automated attendance marking
+* Flask-based web application
+* SQLite database integration
+* Real-time attendance processing
+* User-friendly interface
 
-## Tech Stack
+---
 
-Frontend:
-
-* React.js
-* HTML
-* CSS
-* JavaScript
-
-Backend:
+## Technologies Used
 
 * Python
 * Flask
-* Flask-CORS
+* OpenCV
+* NumPy
+* SQLite
+* HTML/CSS
+
+---
 
 ## Project Structure
 
-student-attendance-app
-│
-├── backend
-│   ├── app.py
-│   ├── routes
-│   └── requirements.txt
-│
-├── frontend
-│   ├── src
-│   └── public
-│
+```bash
+├── static/
+├── templates/
+├── app.py
+├── database.db
+├── requirements.txt
 └── README.md
+```
 
-## Installation
+---
 
-### Backend
+## Installation & Setup
 
-1. Navigate to backend folder
-2. Install dependencies
+1. Clone the repository
 
+```bash
+git clone https://github.com/pragyakanwar/Student-attendance-system.git
+```
+
+2. Navigate to the project folder
+
+```bash
+cd Student-attendance-system
+```
+
+3. Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-3. Run the server
+4. Run the Flask application
 
+```bash
 python app.py
+```
 
-### Frontend
+---
 
-1. Navigate to frontend folder
+## Future Improvements
 
-cd frontend
+* Student login authentication
+* Cloud database integration
+* Live dashboard analytics
+* Attendance export in Excel/PDF
+* Deployment on cloud platforms
 
-2. Install dependencies
-
-npm install
-
-3. Start the React app
-
-npm start
+---
 
 ## Author
 
 Pragya Kanwar
+B.Tech – Artificial Intelligence & Data Science
