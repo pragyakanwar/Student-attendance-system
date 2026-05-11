@@ -1,17 +1,20 @@
 # Smart Attendance System using Computer Vision
 
-An AI-assisted attendance management system developed using Python, Flask, OpenCV, and SQLite.
-The system automates attendance tracking using computer vision and facial recognition techniques.
+An AI-assisted attendance management system developed using Python, Flask, OpenCV, and SQLite to automate student attendance tracking using computer vision and facial recognition techniques.
+
+The system provides separate dashboards for students and teachers, attendance analytics, and real-time attendance management through a user-friendly web interface.
 
 ---
 
 ## Features
 
-* Face detection using OpenCV
-* Automated attendance marking
+* Face detection and attendance processing using OpenCV
+* Automated attendance marking system
 * Flask-based web application
+* Student and Teacher dashboards
+* Attendance analytics and charts
 * SQLite database integration
-* Real-time attendance processing
+* Real-time attendance management
 * User-friendly interface
 
 ---
@@ -29,7 +32,8 @@ The system automates attendance tracking using computer vision and facial recogn
 
 ## Project Structure
 
-```bash
+```bash id="2u4v6p"
+├── screenshots/
 ├── static/
 ├── templates/
 ├── app.py
@@ -42,39 +46,80 @@ The system automates attendance tracking using computer vision and facial recogn
 
 ## Installation & Setup
 
-1. Clone the repository
+### 1. Clone the Repository
 
-```bash
+```bash id="5y3n1r"
 git clone https://github.com/pragyakanwar/Student-attendance-system.git
 ```
 
-2. Navigate to the project folder
+### 2. Navigate to the Project Folder
 
-```bash
+```bash id="4j7f9q"
 cd Student-attendance-system
 ```
 
-3. Install dependencies
+### 3. Install Dependencies
 
-```bash
+```bash id="8d2v4t"
 pip install -r requirements.txt
 ```
 
-4. Run the Flask application
+### 4. Run the Flask Application
 
-```bash
+```bash id="3w8m2n"
 python app.py
 ```
 
 ---
 
+## System Modules
+
+### Student Dashboard
+
+* View attendance records
+* Track attendance percentage
+* Access attendance analytics
+
+### Teacher Dashboard
+
+* Manage student attendance
+* Monitor attendance reports
+* View subject-wise attendance statistics
+
+---
+
+## Project Screenshots
+
+### System Overview
+
+![System Overview](screenshots/system overview.jpeg)
+
+### Login Panel
+
+![Login Panel](screenshots/login_Panel.jpeg)
+
+### Student Dashboard
+
+![Student Dashboard](screenshots/student_dashboard.jpeg)
+
+### Teacher Attendance Panel
+
+![Teacher Panel](screenshots/teacher attendance panel.jpeg)
+
+### Attendance Analytics Chart
+
+![Attendance Chart](screenshots/attendance_chart.jpeg)
+
+---
+
 ## Future Improvements
 
-* Student login authentication
-* Cloud database integration
-* Live dashboard analytics
-* Attendance export in Excel/PDF
+* Face recognition integration
+* Cloud database support
+* Email notifications
+* Export attendance reports in Excel/PDF
 * Deployment on cloud platforms
+* Admin authentication system
 
 ---
 
